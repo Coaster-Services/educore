@@ -42,7 +42,9 @@
 		"@aws-sdk/client-s3": "^3.556.0",
 		"@coasterfan5/ui": "^0.0.14",
 		"@fontsource/open-sauce-one": "^5.0.11",
+		"@iconify-json/ph": "^1.1.12",
 		"prisma": "^5.12.1",
-		"tsx": "^4.7.2"
+		"tsx": "^4.7.2",
+		"unplugin-icons": "^0.18.5"
 	}
 }
