@@ -1,0 +1,44 @@
+# Set the version of docker compose to use
+version: '3.9'
+
+# The containers that compose the project
+services:
+  db:
+    image: postgres:13
+    restart: always
+    container_name: educore-db
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: tests
+    ports:
+      - '5432:5432'
+
+  storage:
+    container_name: s3.docker.test
+    image: zenko/cloudserver
+    ports:
+      - '8000:8000'
+    environment:
+      - REMOTE_MANAGEMENT_DISABLE=1
+      - S3BACKEND=mem
+    command: bash -c "yarn start"
+  web:
+    image: node:20.9.0-alpine3.18
+    container_name: educore-web
+    environment:
+      - CODESPACES
+      - ORIGIN=http://localhost:3000
+    ports:
+      - '5173:5173'
+    env_file:
+      - .env.dev
+    volumes:
+      - ./:/app
+      - /app/node_modules/
+      - /app/.pnpm-store/
+    working_dir: /app
+    command: sh -c "npm i -g pnpm@8.12.1 && pnpm install && pnpm run init:s3bucket && pnpm run dev --host"
+    depends_on:
+      - db
+      - storage
