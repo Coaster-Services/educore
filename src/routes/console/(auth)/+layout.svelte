@@ -1,6 +1,6 @@
 <div class="wrap">
 	<form method="post" action="?/auth" class="loginCard">
-		<slot/>
+		<slot />
 	</form>
 </div>
 

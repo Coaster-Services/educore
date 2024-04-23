@@ -1,34 +1,32 @@
 <script lang="ts">
 	import '@fontsource/open-sauce-one';
-	import { createStyleGuide } from "@coasterfan5/ui"
+	import { createStyleGuide } from '@coasterfan5/ui';
 
 	createStyleGuide({
-		background: "var(--background)",
-		text: "var(--text)",
-		primary: "var(--primary)",
-		secondary: "var(--secondary)",
-		accent: "var(--accent)",
+		background: 'var(--background)',
+		text: 'var(--text)',
+		primary: 'var(--primary)',
+		secondary: 'var(--secondary)',
+		accent: 'var(--accent)',
 		button: {
 			outline: {
-				text: "var(--text)",
-				textHover: "var(--background)"
+				text: 'var(--text)',
+				textHover: 'var(--background)'
 			},
 			regular: {
-				text: "var(--text)",
-				textHover: "var(--text)"
+				text: 'var(--text)',
+				textHover: 'var(--text)'
 			}
 		}
-	}); 
+	});
 </script>
 
 <div class="wrap">
-	<slot/>
+	<slot />
 </div>
-
 
 <style lang="scss">
 	:global(*) {
-
 		box-sizing: border-box;
 		font-family: 'Open Sauce One', sans-serif;
 	}
@@ -41,9 +39,9 @@
 		/*Theme*/
 		--text: #01000a;
 		--background: #fbfbfe;
-		--primary: #2336E1;
+		--primary: #2336e1;
 		--secondary: #e4e4e4;
-		--accent: #00AAFF;	
+		--accent: #00aaff;
 	}
 	:global(h2) {
 		font-weight: 500;
@@ -54,5 +52,4 @@
 		width: 100%;
 		height: 100%;
 	}
-
 </style>

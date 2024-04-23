@@ -1,9 +1,9 @@
 <script lang="ts">
-	export let href = "/"
+	export let href = '/';
 </script>
 
 <a {href}>
-	<slot/>
+	<slot />
 </a>
 
 <style lang="scss">
@@ -14,7 +14,7 @@
 		position: relative;
 
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			background: var(--primary);
 			bottom: 0px;

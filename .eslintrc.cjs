@@ -42,7 +42,7 @@ module.exports = defineConfig({
 		'capitalized-comments': 'error',
 		'require-await': 'error',
 		'no-constant-binary-expression': 'error',
-		'no-new-native-nonconstructor': 'error',
+		'no-new-native-nonconstructor': 'error'
 	},
 	overrides: [
 		{
