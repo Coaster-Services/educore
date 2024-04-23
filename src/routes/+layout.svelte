@@ -1,5 +1,24 @@
 <script lang="ts">
 	import '@fontsource/open-sauce-one';
+	import { createStyleGuide } from "@coasterfan5/ui"
+
+	createStyleGuide({
+		background: "var(--background)",
+		text: "var(--text)",
+		primary: "var(--primary)",
+		secondary: "var(--secondary)",
+		accent: "var(--accent)",
+		button: {
+			outline: {
+				text: "var(--text)",
+				textHover: "var(--background)"
+			},
+			regular: {
+				text: "var(--text)",
+				textHover: "var(--text)"
+			}
+		}
+	}); 
 </script>
 
 <div class="wrap">
@@ -17,7 +36,18 @@
 		margin: 0px;
 		display: flex;
 		height: 100vh;
-		width: 100%;	
+		width: 100%;
+		background: var(--background);
+		/*Theme*/
+		--text: #01000a;
+		--background: #fbfbfe;
+		--primary: #2336E1;
+		--secondary: #e4e4e4;
+		--accent: #00AAFF;	
+	}
+	:global(h2) {
+		font-weight: 500;
+		font-size: 1.5rem;
 	}
 
 	.wrap {
