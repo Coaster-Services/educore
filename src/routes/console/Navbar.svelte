@@ -1,13 +1,13 @@
 <script lang="ts">
-	import TerminalIcon from "~icons/ph/terminal-window"
+	import TerminalIcon from '~icons/ph/terminal-window';
 </script>
 
 <div class="navBar">
 	<div class="inner">
 		<div class="title">
 			<div class="icon">
-				<TerminalIcon height="100%" width="100%" color="var(--primary)"/>
-			</div>	
+				<TerminalIcon height="100%" width="100%" color="var(--primary)" />
+			</div>
 			<h2>Educore Console</h2>
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: start;
-		
+
 		.icon {
 			display: flex;
 			aspect-ratio: 1/1;

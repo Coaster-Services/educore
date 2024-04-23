@@ -1,12 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
-import Icons from 'unplugin-icons/vite'
+import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
-	plugins: [
-		sveltekit(),
-		Icons({compiler: "svelte"}),
-	],
+	plugins: [sveltekit(), Icons({ compiler: 'svelte' })],
 	server: {
 		host: '0.0.0.0',
 		hmr: !process.env.CODESPACES,
