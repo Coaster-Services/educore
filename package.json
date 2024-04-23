@@ -29,6 +29,7 @@
 		"eslint-plugin-svelte": "^2.35.1",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
+		"sass": "^1.75.0",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"tslib": "^2.4.1",
@@ -39,6 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"@aws-sdk/client-s3": "^3.556.0",
+		"@fontsource/open-sauce-one": "^5.0.11",
 		"prisma": "^5.12.1",
 		"tsx": "^4.7.2"
 	}
