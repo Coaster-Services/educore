@@ -1,10 +1,16 @@
 <script lang="ts">
-	import {page} from "$app/stores"
+	import { page } from '$app/stores';
 </script>
 
 <nav class="sidebar">
-	<a class="button" href="/console/dashboard" class:active={$page.route.id == "/console/dashboard"}>Dashboard</a>
-	<a class="button" href="/console/dashboard" class:active={$page.route.id == "/console/organizations"}>Organizations</a>
+	<a class="button" href="/console/dashboard" class:active={$page.route.id == '/console/dashboard'}
+		>Dashboard</a
+	>
+	<a
+		class="button"
+		href="/console/dashboard"
+		class:active={$page.route.id == '/console/organizations'}>Organizations</a
+	>
 </nav>
 
 <style lang="scss">
@@ -33,7 +39,7 @@
 		}
 
 		&.active {
-			background: color-mix(in srgb, var(--secondary) 50%, var(--background) 50%)
+			background: color-mix(in srgb, var(--secondary) 50%, var(--background) 50%);
 		}
 	}
 </style>

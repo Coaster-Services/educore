@@ -1,12 +1,11 @@
 <script>
-
-	import Sidebar from "./Sidebar.svelte";
-
+	import Sidebar from './Sidebar.svelte';
 </script>
+
 <div class="wrap">
-	<Sidebar/>
+	<Sidebar />
 	<div class="content">
-		<slot/>
+		<slot />
 	</div>
 </div>
 
@@ -15,7 +14,7 @@
 		width: 100%;
 		height: 100%;
 		display: flex;
-		flex-direction:row;
+		flex-direction: row;
 		align-items: start;
 		justify-content: start;
 	}
@@ -26,4 +25,3 @@
 		height: 100%;
 	}
 </style>
-
