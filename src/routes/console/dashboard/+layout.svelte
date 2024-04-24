@@ -1,11 +1,12 @@
 <script>
-	import Navbar from './Navbar.svelte';
-</script>
 
+	import Sidebar from "./Sidebar.svelte";
+
+</script>
 <div class="wrap">
-	<Navbar />
+	<Sidebar/>
 	<div class="content">
-		<slot />
+		<slot/>
 	</div>
 </div>
 
@@ -14,12 +15,15 @@
 		width: 100%;
 		height: 100%;
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		flex-direction:row;
+		align-items: start;
 		justify-content: start;
 	}
+
 	.content {
-		height: 100%;
 		width: 100%;
+		flex-grow: 1;
+		height: 100%;
 	}
 </style>
+

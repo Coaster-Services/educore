@@ -21,6 +21,7 @@
 		justify-content: center;
 		padding: 0rem 1rem;
 		box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+		z-index: 100;
 	}
 	.inner {
 		width: 90%;
