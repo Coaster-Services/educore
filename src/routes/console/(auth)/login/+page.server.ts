@@ -9,47 +9,32 @@ import { createSession } from '$lib/server/createSession.js';
 export const actions = {
 	auth: formHandler(
 		z.object({
-			firstName: z.string(),
-			lastName: z.string(),
 			email: z.string(),
-			password: z.string(),
-			password2: z.string()
+			password: z.string()
 		}),
-		async ({ firstName, lastName, email, password, password2 }, { cookies }) => {
-			if (password !== password2) {
-				throw fail(400, {
-					message: 'Passwords must match'
-				});
-			}
-
-			const newEmail = email.toLowerCase();
-
+		async ({ email, password }, { cookies }) => {
 			const userCheck = await prisma.user.findFirst({
 				where: {
-					email: newEmail
+					email: email
 				}
 			});
 
-			if (userCheck) {
+			if (!userCheck) {
 				throw fail(400, {
-					message: 'Email already in use'
+					message: 'Invalid email or password'
 				});
 			}
 
-			const salt = crypto.randomBytes(16).toString();
+			const salt = userCheck.salt;
 			const hash = await hashPassword(password, salt);
 
-			const user = await prisma.user.create({
-				data: {
-					firstName,
-					lastName,
-					email,
-					salt,
-					hash
-				}
-			});
+			if (hash != userCheck.hash) {
+				throw fail(400, {
+					message: 'Invalid email or password'
+				});
+			}
 
-			await createSession(user.id, cookies);
+			await createSession(userCheck.id, cookies);
 			throw redirect(303, '/console/dashboard');
 		}
 	)

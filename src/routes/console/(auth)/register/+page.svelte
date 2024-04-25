@@ -20,6 +20,6 @@
 	<Input name="password2" type="password" label="Confirm Password" />
 </ItemSpacer>
 <ItemSpacer>
-	<Button value="Log In" variation="outline" />
+	<Button value="Register" variation="outline" />
 </ItemSpacer>
 <p>Returning user? <Link href="/console/login">Log In</Link></p>

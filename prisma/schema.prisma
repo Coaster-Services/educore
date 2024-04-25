@@ -15,7 +15,7 @@ datasource db {
 
 model Session {
   id String @id @default(cuid())
-  token String
+  token String @unique
   userId String
   user User @relation(fields: [userId], references: [id])
 }
@@ -24,7 +24,7 @@ model User {
   id String @id @default(cuid())
   firstName String
   lastName String
-  email String
+  email String @unique
   hash String
   salt String
   createdAt DateTime @default(now())

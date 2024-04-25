@@ -38,7 +38,7 @@ services:
       - /app/node_modules/
       - /app/.pnpm-store/
     working_dir: /app
-    command: sh -c "npm i -g pnpm@8.12.1 && pnpm install && pnpm run init:s3bucket && pnpm run dev --host"
+    command: sh -c "npm i -g pnpm@8.12.1 && pnpm install && pnpm run init:s3bucket && pnpm run db:deploy && pnpm run dev --host"
     depends_on:
       - db
       - storage
